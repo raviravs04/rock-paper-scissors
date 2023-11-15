@@ -1,0 +1,35 @@
+name: sample mvn application
+
+on: 
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout main branch from github
+        uses: actions/checkout@v2
+
+      - name: setup JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: build mvn project
+        run: mvn -B package --file pom.xml
+
+      - name: list current dir
+        run: ls -la
+
+      - name: ls target dir
+        run: |
+          pwd
+          cd targer
+          ls -a
+
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2.1.1
+        with:
+          name: roshanbo-0.0.1-SNAPSHOT.jar
+          path: targer/ 
