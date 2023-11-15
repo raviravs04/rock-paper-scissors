@@ -24,7 +24,7 @@ jobs:
       - name: ls target dir
         run: |
           pwd
-          cd targer
+          cd target
           ls -a
 
       - name: Download a Build Artifact
