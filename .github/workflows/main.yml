@@ -30,5 +30,5 @@ jobs:
       - name: upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: example-jar
-          path: .sample/
+          name: roshambo-0.0.1-SNAPSHOT.jar
+          path: target/
