@@ -2,7 +2,6 @@ name: sample mvn application
 
 on: 
   push:
-    branches: [ main ]
 
 jobs:
   build:
@@ -32,4 +31,4 @@ jobs:
         uses: actions/download-artifact@v2.1.1
         with:
           name: roshanbo-0.0.1-SNAPSHOT.jar
-          path: targer/ 
+          path: targert/ 
